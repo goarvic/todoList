@@ -69,7 +69,7 @@ class HomeController {
             ajaxResponse.statusCode = -1
             ajaxResponse.statusDescription = "Error parsing request object"
             ajaxResponse.toDoItem = toDoItem
-            render ajaxResponse
+            render ajaxResponse as JSON
             return
         }
 
