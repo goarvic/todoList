@@ -13,6 +13,5 @@ class ToDoItem {
 
     static constraints = {
         description nullable : false
-        isDone nullable : false
     }
 }
