@@ -21,7 +21,6 @@
     <g:javascript library="jquery" plugin="jquery"/>
     <%--<script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.11.0.min.js')}"></script>--%>
 
-    <script src="${resource(dir: 'js', file: 'bootstrap-switch.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
     <script type="text/javascript" src="${resource(dir: 'js', file: 'applicationToDo.js')}"></script>
 
