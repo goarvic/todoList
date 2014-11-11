@@ -31,22 +31,21 @@ class HomeController {
 
     def addItem()
     {
-        String description = request.JSON.description
-
+        String description
         ResponseObject response
 
-        if (description != null)
+        description = request.JSON.description
+
+        if ((description != null) && (!description.equals("")))
         {
             response = toDoItemService.addNewItem(description)
             render response as JSON
             return
         }
 
-        response = new ResponseObject()
-        response.statusCode = -1
-        response.statusDescription = "Error parsing request object"
-        response.toDoItem = null
-        render response
+        log.warn "Error binding param object from AJAX request addItem"
+        response = new ResponseObject(statusCode: -1, statusDescription: "Error parsing request object", toDoItem: null)
+        render response as JSON
     }
 
     //***************************************************************************************
@@ -64,11 +63,8 @@ class HomeController {
         }
         catch(Exception e)
         {
-            ajaxResponse = new ResponseObject()
+            ajaxResponse = new ResponseObject(statusCode: -1, statusDescription: "Error parsing request object", toDoItem : toDoItem)
             log.warn "Error binding param object from AJAX request changeDoneState"
-            ajaxResponse.statusCode = -1
-            ajaxResponse.statusDescription = "Error parsing request object"
-            ajaxResponse.toDoItem = toDoItem
             render ajaxResponse as JSON
             return
         }

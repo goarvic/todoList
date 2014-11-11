@@ -10,10 +10,10 @@ class ToDoItemService {
 
     List<ToDoItemModel> getLastItems() {
         List<ToDoItem> itemsList = ToDoItem.list(sort:"dateCreated", order:"desc", max:20)
-
         List<ToDoItemModel> itemsListModel = new ArrayList<ToDoItemModel>()
         for (int i=itemsList.size()-1; i>=0; i--)
         {
+
             ToDoItemModel toDoItemModel = new ToDoItemModel()
             toDoItemModel.properties.each{propertyName, propertyValue ->
                 if (!propertyName.equals("class"))
@@ -21,7 +21,6 @@ class ToDoItemService {
             }
             itemsListModel.add(toDoItemModel)
         }
-
         return itemsListModel
     }
 

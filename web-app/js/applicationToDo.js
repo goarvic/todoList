@@ -68,18 +68,18 @@ function addItem(url)
                 {
                     $('#listItems').append(
 
-                            '<div class="row" style="margin-bottom:8px;">' +
-                            '<div  class="col-sm-10">'+
-                            '<li isDone="false" id="itemId' + response.toDoItem.id +'" class="list-group-item">'+
-                            response.toDoItem.description +
-                            '</li>'+
-                            '</div>'+
-                            '<div class="col-sm-2">' +
-                            '<button type="button" id="buttonItemId'+ response.toDoItem.id +'" class="changeStateButton btn btn-default btn-lg">'+
-                            '<span href="#" class="glyphicon glyphicon-ok" style="float:right;color:green"></span>'+
-                            '</button>'+
-                            '</div>'+
-                            '</div>'
+                            '<div class="row" style="margin-bottom:8px;">' + "\n" +
+                            '   <div  class="col-sm-10">'+
+                            '       <li isDone="false" id="itemId' + response.toDoItem.id +'" class="list-group-item">'+ "\n" +
+                            '           ' + response.toDoItem.description + "\n" +
+                            '       </li>'+ "\n" +
+                            '   </div>'+ "\n" +
+                            '   <div class="col-sm-2">' + "\n" +
+                            '       <button type="button" id="buttonItemId'+ response.toDoItem.id +'" class="changeStateButton btn btn-default btn-lg">'+ "\n" +
+                            '           <span href="#" class="glyphicon glyphicon-ok" style="float:right;color:green"></span>'+ "\n" +
+                            '       </button>'+ "\n" +
+                            '   </div>'+ "\n" +
+                            '</div>' + "\n"
                     )
                     $('#inputText').val("")
                 }
